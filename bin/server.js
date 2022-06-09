@@ -71,7 +71,7 @@ const PERMISSIONS_POLICY = [
 
 const statics = new StaticRequestHandler('')
 	.setCache(DEV ? {} : STATIC_CACHE)
-	.addHeader('Content-Security-Policy', [
+	.addHeader('Content-Security-Policy-Report-Only', [
 		'base-uri \'self\'',
 		'default-src \'none\'',
 		'script-src \'self\' https://unpkg.com',
@@ -114,12 +114,16 @@ statics
 		'Expires: 3000-01-01T00:00:00Z\n',
 	].join(''))
 	.addResources('/', BASEDIR, [
+		'login.html',
 		'index.html',
 		'library.htm',
 		'lib',
 		'web/lib',
 		'web/resources',
 		'web/styles',
+		'web/styles/login.css',
+		'web/scripts',
+		'web/scripts/login.js',
 	], devMapper);
 
 if(DEV) {
@@ -130,6 +134,10 @@ if(DEV) {
 		'node_modules/codemirror/mode',
 		'scripts',
 		'web/scripts',
+		'web/styles',
+		'web/scripts/login.js',
+		'login.html',
+		'web/styles/login.css',
 	]);
 	statics.setFileWatch(true);
 }
@@ -137,7 +145,7 @@ if(DEV) {
 const render = new RenderRequestHandler('/render')
 	.setCache(DEV ? {} : RENDER_CACHE)
 	.setCrossOrigin(true)
-	.addHeader('Content-Security-Policy', [
+	.addHeader('Content-Security-Policy-Report-Only', [
 		'base-uri \'self\'',
 		'default-src \'none\'',
 		`style-src '${SKETCH_CSS_SHA}'`,

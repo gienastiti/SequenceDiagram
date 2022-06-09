@@ -139,7 +139,7 @@ class Server {
 			handler.printInfo(target);
 			target.write('\n');
 		}
-		target.write('Available at ' + this.baseurl() + '\n\n');
+		target.write('Service running on...' + this.baseurl() + '\n\n');
 	}
 }
 

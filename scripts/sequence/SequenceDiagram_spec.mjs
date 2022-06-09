@@ -57,11 +57,11 @@ describe('SequenceDiagram', () => {
 	});
 
 	it('renders simple metadata', () => {
-		const diagram = makeDiagram('title My title here');
+		const diagram = makeDiagram('Welcome to Challenge');
 
 		expect(getSimplifiedContent(diagram)).toEqual(
 			'<svg viewBox="-11.5 -16 23 21">' +
-			'<metadata>title My title here</metadata>' +
+			'<metadata>Welcome to Challenge</metadata>' +
 			'<defs>' +
 			'<mask id="FullMask" maskUnits="userSpaceOnUse">' +
 			'<rect fill="#FFFFFF" height="21" width="23" x="-11.5" y="-16">' +
@@ -90,10 +90,10 @@ describe('SequenceDiagram', () => {
 	});
 
 	it('re-renders when changed', () => {
-		const diagram = makeDiagram('title My title here');
-		diagram.set('title Another title');
+		const diagram = makeDiagram('Welcome to Challenge');
+		diagram.set('Tittle - Halo');
 
-		expect(getSimplifiedContent(diagram)).toContain('Another title');
+		expect(getSimplifiedContent(diagram)).toContain('Tittle - Hallo');
 	});
 
 	it('renders simple components', () => {

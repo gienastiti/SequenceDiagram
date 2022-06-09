@@ -20,7 +20,7 @@ img {
 	color: #800000;
 }
 
-@media (prefers-color-schem: dark) {
+@media (prefers-color-scheme: dark) {
 	body {
 		background: #111111;
 		color: #DDDDDD;

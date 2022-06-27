@@ -18,7 +18,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="format-detection" content="telephone=no">
 
-<title>Sequence Diagram - Challenge</title>
+<title>Sequence Diagram</title>
 <link rel="icon" href="web/resources/favicon.png">
 <link rel="apple-touch-icon" href="web/resources/apple-touch-icon.png">
 <link rel="stylesheet" href="web/styles/editor.css">
@@ -79,12 +79,13 @@
 <body>
 
 <div id="loader">
-<h1>Sequence Diagram Online Editor - Challenge</h1>
+<h1>Sequence Diagram Online Editor</h1>
 <p class="loadmsg">Loading&hellip;</p>
 <nav>
-<a href="#" data-touch="Files">Diagrams</a>
+<a href="#Diagram" data-touch="Files">Diagrams</a>
 <a href="library.htm" target="_blank" rel="noopener" data-touch="API">Library</a>
-<a href="https://github.com/davidje13/SequenceDiagram" target="_blank" rel="noopener" data-touch="">GitHub</a>
+<!--a href="https://365tsel.sharepoint.com/sites/Challenge-Explore/Sequence" target="_blank" rel="noopener" data-touch="API">Export Sharepoint</a-->
+<!--a href="https://github.com/davidje13/SequenceDiagram" target="_blank" rel="noopener" data-touch="">GitHub</a-->
 </nav>
 </div>
 
@@ -93,23 +94,27 @@
 <main>
 <section class="banner">
 Enable JavaScript for live rendering, templates, PNG export, and local file saving.
-<nav><a href="library.htm" target="_blank" rel="noopener">Library</a><a href="https://github.com/davidje13/SequenceDiagram" target="_blank" rel="noopener">GitHub</a></nav>
+<nav>
+	<a href="library.htm" target="_blank" rel="noopener">Library</a>
+	<a href="https://github.com/davidje13/SequenceDiagram" target="_blank" rel="noopener">GitHub</a>
+</nav>
 </section>
 <form target="preview" action="preview" method="GET">
 <textarea name="c">
-title Labyrinth
+title Challenge
+
+begin Bowie, Goblin, Audience 
 
 Bowie -> Goblin: You remind me of the babe
 Goblin -> Bowie: What babe?
 Bowie -> Goblin: The babe with the power
 Goblin -> Bowie: What power?
-note right of Bowie, Goblin: Most people get muddled here!
+note over Goblin: Most people get muddled here!
 Bowie -> Goblin: "The power of voodoo"
 Goblin -> Bowie: "Who-do?"
 Bowie -> Goblin: You do!
 Goblin -> Bowie: Do what?
 Bowie -> Goblin: Remind me of the babe!
-
 Bowie -> Audience: Sings
 
 terminators box

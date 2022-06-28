@@ -7,7 +7,7 @@
 	default-src 'none';
 	script-src 'self' https://unpkg.com;
 	style-src 'self' 'sha256-s7UPtBgvov5WNF9C1DlTZDpqwLgEmfiWha5a5p/Zn7E=';
-	connect-src 'self';
+	connect-src 'self' http://localhost:8000 *;
 	font-src 'self' data:;
 	img-src 'self' blob:;
 	frame-src 'self';
@@ -68,10 +68,11 @@
 <meta name="cdn-cm/addon/edit/trailingspace" content="web/lib/trailingspace.js">
 <meta name="cdn-cm/addon/comment/comment" content="web/lib/comment.js">
 
-<script src="lib/sequence-diagram-web.min.js"></script>
+<script src="lib/sequence-diagram-web.js"></script>
 <script src="web/lib/require.js"></script>
 <link rel="stylesheet" href="web/styles/codemirror-override.css">
-<script src="web/lib/editor.min.js"></script>
+<script src="web/lib/usecases.js"></script>
+<script src="web/lib/editor.js"></script>
 <!-- /LIVE -->
 
 </head>

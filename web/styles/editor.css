@@ -741,7 +741,7 @@ svg a:active, svg a:hover {
 		stroke: none !important;
 	}
 
-	.options {
+	*.options {
 		display: none;
 	}
 }

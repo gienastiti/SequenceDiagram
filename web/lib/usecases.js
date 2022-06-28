@@ -1,5 +1,6 @@
 
 const BACKEND_SERVICE_URL = "http://localhost:8000";
+// const BACKEND_SERVICE_URL = "http://13.213.186.104:8000";
 
 class SaveDiagramToSharePoint {
 

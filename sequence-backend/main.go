@@ -26,6 +26,10 @@ func main() {
 	//config.AllowOrigins = []string{"http://google.com", "http://facebook.com"}
 	// config.AllowAllOrigins = true
 
+	// //uncomment yg ini
+	// config.AllowOrigins = []string{"http://13.213.186.104/"}
+	// config.AllowAllOrigins = false
+
 	httpServer.Use(cors.New(corsConfig))
 
 	httpServer.POST("/save", SaveDiagram)

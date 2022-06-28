@@ -52,7 +52,7 @@ function performSampleTests({file, code}, index) {
 			))
 			.then((expected) => {
 				expect(actual).toLookLike(expected, {
-					details: '#Diagram' + (index + 1) + ' compared to ' + file,
+					details: '#' + (index + 1) + ' compared to ' + file,
 				});
 			});
 	} else {

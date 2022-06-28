@@ -69,7 +69,7 @@ describe('Interface', () => {
 
 			const el = ui.downloadSVG.element;
 
-			expect(el.getAttribute('href')).toEqual('#Diagram');
+			expect(el.getAttribute('href')).toEqual('#');
 
 			el.dispatchEvent(new Event('click'));
 

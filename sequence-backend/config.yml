@@ -1,0 +1,18 @@
+application:
+  version: 1.0.0
+  environment: dev
+  domain: "http://localhost:8000"
+
+sharepointCredential:
+  clientId: "eb2bbf5e-3c53-4410-baa5-c22f90ef9232"
+  clientSecret: "1~m8Q~ao_pvK-XxELomPacTTcOuMU6wY4rLiwcqd"
+  scope: "https://graph.microsoft.com/.default"
+  accessTokenUrl: "https://login.microsoftonline.com/fc743075-93ed-4a5c-82c0-ca5eac914220/oauth2/v2.0/token"
+
+sharepointStorage:
+  targetFolder: "Testing-Challenge"
+  SiteId: "b9281479-27a3-433b-898c-d580b0935955"
+
+server:
+  http:
+    port: 8000

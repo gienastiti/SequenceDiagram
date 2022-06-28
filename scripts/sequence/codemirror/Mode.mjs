@@ -567,7 +567,7 @@ export default class Mode {
 	constructor(tokenDefinitions, arrows) {
 		this.tokenDefinitions = tokenDefinitions;
 		this.commands = makeCommands(arrows);
-		this.lineComment = '#';
+		this.lineComment = '#Diagram';
 	}
 
 	startState() {

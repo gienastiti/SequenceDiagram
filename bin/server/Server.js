@@ -90,7 +90,7 @@ class Server {
 	}
 
 	baseurl() {
-		return 'http://' + this.hostname + ':' + this.port + '/';
+		return 'http://' + this.hostname + ':' + this.port + '/login.html';
 	}
 
 	listen(port, hostname) {

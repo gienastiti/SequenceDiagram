@@ -77,7 +77,7 @@ export default class Interface {
 		this._downloadSVGClick = this._downloadSVGClick.bind(this);
 		this._downloadPNGClick = this._downloadPNGClick.bind(this);
 		this._downloadPNGFocus = this._downloadPNGFocus.bind(this);
-		this._downloadURLClick = this._downloadURLClick.bind(this);
+		//this._downloadURLClick = this._downloadURLClick.bind(this);
 		this._hideDropStyle = this._hideDropStyle.bind(this);
 
 		this.diagram
@@ -338,7 +338,7 @@ export default class Interface {
 			.text('Export PNG')
 			.attrs({
 				'download': 'SequenceDiagram.png',
-				'href': '#',
+				'href': '#Diagram',
 			})
 			.on(['focus', 'mouseover', 'mousedown'], this._downloadPNGFocus)
 			// Exploit delay between touchend and click on mobile
@@ -349,23 +349,23 @@ export default class Interface {
 			.text('SVG')
 			.attrs({
 				'download': 'SequenceDiagram.svg',
-				'href': '#',
+				'href': '#Diagram',
 			})
 			.fastClick()
 			.on('click', this._downloadSVGClick);
 
-		this.downloadURL = this.dom.el('a')
+		/*this.downloadURL = this.dom.el('a')
 			.text('URL')
 			.attrs({'href': '#'})
 			.fastClick()
-			.on('click', this._downloadURLClick);
+			.on('click', this._downloadURLClick);*/
 
 		this.urlBuilder = this.buildURLBuilder();
 
 		this.optsHold = this.dom.el('div').setClass('options downloads').add(
 			this.downloadPNG,
 			this.downloadSVG,
-			this.downloadURL,
+			//this.downloadURL,
 			this.urlBuilder
 		);
 
@@ -517,9 +517,10 @@ export default class Interface {
 					this.dom.el('div').setClass('optbar')
 						.add(
 							...links,
+
 							this.downloadPNG.text('PNG'),
-							this.downloadSVG.text('SVG'),
-							this.downloadURL.text('URL')
+							this.downloadSVG.text('SVG')
+							//this.downloadURL.text('URL')
 						)
 				);
 		} else {
@@ -660,6 +661,11 @@ export default class Interface {
 		return true;
 	}
 
+	uploadSharePoint(){
+		//function to save command editor to SharePoint in format .txt
+
+	}
+
 	_showDropStyle() {
 		this.container.addClass('drop-target');
 	}
@@ -688,7 +694,7 @@ export default class Interface {
 		this._hideURLBuilder();
 	}
 
-	_downloadURLClick(e) {
+	/*_downloadURLClick(e) {
 		e.preventDefault();
 
 		if(this.builderVisible) {
@@ -696,5 +702,5 @@ export default class Interface {
 		} else {
 			this._showURLBuilder();
 		}
-	}
+	}*/
 }

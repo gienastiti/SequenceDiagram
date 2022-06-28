@@ -9,19 +9,19 @@ import requestSlot from './slots/requestSlot.mjs';
 import {require} from './requireCDN.mjs';
 
 const defaultCode = (
-	'title Labyrinth\n' +
+	'title Challenge\n' +
 	'\n' +
+	'begin Bowie, Goblin, Audience\n' +
 	'Bowie -> Goblin: You remind me of the babe\n' +
 	'Goblin -> Bowie: What babe?\n' +
 	'Bowie -> Goblin: The babe with the power\n' +
 	'Goblin -> Bowie: What power?\n' +
-	'note right of Bowie, Goblin: Most people get muddled here!\n' +
+	'note over Goblin: Most people get muddled here!\n' +
 	'Bowie -> Goblin: "The power of voodoo"\n' +
 	'Goblin -> Bowie: "Who-do?"\n' +
 	'Bowie -> Goblin: You do!\n' +
 	'Goblin -> Bowie: Do what?\n' +
 	'Bowie -> Goblin: Remind me of the babe!\n' +
-	'\n' +
 	'Bowie -> Audience: Sings\n' +
 	'\n' +
 	'terminators box\n'

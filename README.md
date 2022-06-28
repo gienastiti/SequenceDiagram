@@ -15,19 +15,20 @@ logic is available as a component which can be
 <img src="screenshots/SimpleUsage.png" alt="Simple Usage preview" width="200" align="right" />
 
 ```
-title Labyrinth
+title Challenge
+
+begin begin Bowie, Goblin, Audience 
 
 Bowie -> Goblin: You remind me of the babe
 Goblin -> Bowie: What babe?
 Bowie -> Goblin: The babe with the power
 Goblin -> Bowie: What power?
-note right of Bowie, Goblin: Most people get muddled here!
+note over Goblin: Most people get muddled here!
 Bowie -> Goblin: "The power of voodoo"
 Goblin -> Bowie: "Who-do?"
 Bowie -> Goblin: You do!
 Goblin -> Bowie: Do what?
 Bowie -> Goblin: Remind me of the babe!
-
 Bowie -> Audience: Sings
 
 terminators box

@@ -9,6 +9,7 @@ import CodeEditor from './CodeEditor.mjs';
 import DOMWrapper from '../../../scripts/core/DOMWrapper.mjs';
 import URLExporter from './URLExporter.mjs';
 import VoidStorage from '../storage/VoidStorage.mjs';
+//import SaveDiagramToSharePoint from '../lib/usecase.js'; 
 
 const DELAY_AGENTCHANGE = 500;
 const DELAY_STAGECHANGE = 250;
@@ -56,6 +57,7 @@ export default class Interface {
 		require = null,
 		storage = new VoidStorage(),
 		touchUI = false,
+		//saveDiagramToSharepoint = new SaveDiagramToSharePoint()
 	}) {
 		this.diagram = sequenceDiagram;
 		this.defaultCode = defaultCode;
@@ -65,6 +67,7 @@ export default class Interface {
 		this.minScale = 1.5;
 		this.require = require || (() => null);
 		this.touchUI = touchUI;
+		//this.saveDiagramUseCase = saveDiagramToSharepoint;
 
 		this.debounced = null;
 		this.latestSeq = null;
@@ -77,7 +80,8 @@ export default class Interface {
 		this._downloadSVGClick = this._downloadSVGClick.bind(this);
 		this._downloadPNGClick = this._downloadPNGClick.bind(this);
 		this._downloadPNGFocus = this._downloadPNGFocus.bind(this);
-		//this._downloadURLClick = this._downloadURLClick.bind(this);
+		this._downloadURLClick = this._downloadURLClick.bind(this);
+		//this._saveToSharePoint = this._saveToSharePoint.bind(this);
 		this._hideDropStyle = this._hideDropStyle.bind(this);
 
 		this.diagram
@@ -334,6 +338,13 @@ export default class Interface {
 	}
 
 	buildOptionsDownloads() {
+		/*this.saveToSharepoint = this.dom.el('a')
+			.text('Save to SharePoint')
+			.attrs({
+				'href': '#',
+			})
+			.on('click', this._saveToSharePoint);*/
+		
 		this.downloadPNG = this.dom.el('a')
 			.text('Export PNG')
 			.attrs({
@@ -354,18 +365,19 @@ export default class Interface {
 			.fastClick()
 			.on('click', this._downloadSVGClick);
 
-		/*this.downloadURL = this.dom.el('a')
+		this.downloadURL = this.dom.el('a')
 			.text('URL')
 			.attrs({'href': '#'})
 			.fastClick()
-			.on('click', this._downloadURLClick);*/
+			.on('click', this._downloadURLClick);
 
 		this.urlBuilder = this.buildURLBuilder();
 
 		this.optsHold = this.dom.el('div').setClass('options downloads').add(
 			this.downloadPNG,
 			this.downloadSVG,
-			//this.downloadURL,
+			this.downloadURL,
+			//this.saveToSharepoint,
 			this.urlBuilder
 		);
 
@@ -519,8 +531,9 @@ export default class Interface {
 							...links,
 
 							this.downloadPNG.text('PNG'),
-							this.downloadSVG.text('SVG')
-							//this.downloadURL.text('URL')
+							this.downloadSVG.text('SVG'),
+							this.downloadURL.text('URL')
+							//this.saveToSharepoint.text('SharePoint')
 						)
 				);
 		} else {
@@ -661,11 +674,6 @@ export default class Interface {
 		return true;
 	}
 
-	uploadSharePoint(){
-		//function to save command editor to SharePoint in format .txt
-
-	}
-
 	_showDropStyle() {
 		this.container.addClass('drop-target');
 	}
@@ -677,6 +685,19 @@ export default class Interface {
 	_downloadPNGFocus() {
 		this.updatePNGLink();
 	}
+
+	/*async _saveToSharePoint(e) {
+		e.preventDefault();
+
+		var filename = prompt("Nama document");
+
+		const self = this;
+	
+		this.diagram.getPNGBlob(PNG_RESOLUTION)
+			.then(function(blob) {
+				self.saveDiagramUseCase.execute(filename, self.code.value(), blob)
+			})
+	}*/
 
 	_downloadPNGClick(e) {
 		if(this.updatingPNG) {
@@ -694,7 +715,7 @@ export default class Interface {
 		this._hideURLBuilder();
 	}
 
-	/*_downloadURLClick(e) {
+	_downloadURLClick(e) {
 		e.preventDefault();
 
 		if(this.builderVisible) {
@@ -702,5 +723,5 @@ export default class Interface {
 		} else {
 			this._showURLBuilder();
 		}
-	}*/
+	}
 }

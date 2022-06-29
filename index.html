@@ -103,20 +103,15 @@ Enable JavaScript for live rendering, templates, PNG export, and local file savi
 <textarea name="c">
 title Challenge
 
-begin Bowie, Goblin, Audience 
-
-Bowie -> Goblin: You remind me of the babe
-Goblin -> Bowie: What babe?
-Bowie -> Goblin: The babe with the power
-Goblin -> Bowie: What power?
-note over Goblin: Most people get muddled here!
-Bowie -> Goblin: "The power of voodoo"
-Goblin -> Bowie: "Who-do?"
-Bowie -> Goblin: You do!
-Goblin -> Bowie: Do what?
-Bowie -> Goblin: Remind me of the babe!
-Bowie -> Audience: Sings
-
+begin A, B, C 
+	
+A -> B : Login to Application
+A -> B : Select Product & Payment
+B -> C : Checking product eligible
+B -> C : Submit Request
+C --> B : Request Success
+B --> A : Notification Success
+	
 terminators box
 </textarea>
 <button type="submit">Update</button>

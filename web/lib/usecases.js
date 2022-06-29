@@ -33,11 +33,3 @@ class SaveDiagramToSharePoint {
 	}
 }
 
-class GetListDiagramsFromSharePoint {
-
-	constructor() {}
-
-	execute() {
-
-	}
-}

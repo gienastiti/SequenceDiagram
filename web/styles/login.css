@@ -32,6 +32,23 @@ body{
   line-height: 10px;
   color: #FFFFFF;
 }
+.box h3{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  height: 30px;
+  font-size: 30px;
+  color: #FFFFFF;
+}
+.box p3{
+  top: 00.25px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 10px;
+  color: #FFFFFF;
+}
 .box input[type="text"], .box input[type="password"]{
   border: 0;
   background: #FFFFFF;

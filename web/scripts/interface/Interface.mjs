@@ -8,8 +8,7 @@ import {
 import CodeEditor from './CodeEditor.mjs';
 import DOMWrapper from '../../../scripts/core/DOMWrapper.mjs';
 import URLExporter from './URLExporter.mjs';
-import VoidStorage from '../storage/VoidStorage.mjs';
-//import SaveDiagramToSharePoint from '../lib/usecase.js'; 
+import VoidStorage from '../storage/VoidStorage.mjs'; 
 
 const DELAY_AGENTCHANGE = 500;
 const DELAY_STAGECHANGE = 250;
@@ -57,7 +56,6 @@ export default class Interface {
 		require = null,
 		storage = new VoidStorage(),
 		touchUI = false,
-		//saveDiagramToSharepoint = new SaveDiagramToSharePoint()
 	}) {
 		this.diagram = sequenceDiagram;
 		this.defaultCode = defaultCode;
@@ -67,7 +65,6 @@ export default class Interface {
 		this.minScale = 1.5;
 		this.require = require || (() => null);
 		this.touchUI = touchUI;
-		//this.saveDiagramUseCase = saveDiagramToSharepoint;
 
 		this.debounced = null;
 		this.latestSeq = null;
@@ -81,7 +78,6 @@ export default class Interface {
 		this._downloadPNGClick = this._downloadPNGClick.bind(this);
 		this._downloadPNGFocus = this._downloadPNGFocus.bind(this);
 		this._downloadURLClick = this._downloadURLClick.bind(this);
-		//this._saveToSharePoint = this._saveToSharePoint.bind(this);
 		this._hideDropStyle = this._hideDropStyle.bind(this);
 
 		this.diagram
@@ -349,7 +345,7 @@ export default class Interface {
 			.text('Export PNG')
 			.attrs({
 				'download': 'SequenceDiagram.png',
-				'href': '#Diagram',
+				'href': '#',
 			})
 			.on(['focus', 'mouseover', 'mousedown'], this._downloadPNGFocus)
 			// Exploit delay between touchend and click on mobile
@@ -360,7 +356,7 @@ export default class Interface {
 			.text('SVG')
 			.attrs({
 				'download': 'SequenceDiagram.svg',
-				'href': '#Diagram',
+				'href': '#',
 			})
 			.fastClick()
 			.on('click', this._downloadSVGClick);
@@ -377,7 +373,6 @@ export default class Interface {
 			this.downloadPNG,
 			this.downloadSVG,
 			this.downloadURL,
-			//this.saveToSharepoint,
 			this.urlBuilder
 		);
 

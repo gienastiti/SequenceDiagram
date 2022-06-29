@@ -25,8 +25,8 @@ terminators box
 
 Contributions are welcome!
 
-Library Sequence Diagram : [GitHub issue tracker](https://github.com/davidje13/SequenceDiagram/issues),
-SharePoint API : [Github issue tracker](https://docs.microsoft.com/en-us/graph/api/driveitem-put-content?view=graph-rest-1.0&tabs=http) & [Gitlab issue tracker](https://gitlab.com/AwesomeRei/sharepoint)
+Library Sequence Diagram : [Github Reference](https://github.com/davidje13/SequenceDiagram/issues),
+SharePoint API : [SharePoint Reference](https://docs.microsoft.com/en-us/graph/api/driveitem-put-content?view=graph-rest-1.0&tabs=http) & [SharePoint Reference Internal SA](https://gitlab.com/AwesomeRei/sharepoint)
 
 For more details on contributing, see the
 [CONTRIBUTING.md file](docs/CONTRIBUTING.md).

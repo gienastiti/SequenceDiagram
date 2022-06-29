@@ -5,7 +5,7 @@ function validate()
   if (username == "admin_test@gmail.com" && password == "admin123")
   {
     alert ("Login successfully");
-    window.location = "./index.html";
+    window.location = "./#1";
     return false;
   }
   else

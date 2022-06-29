@@ -1667,7 +1667,7 @@
 		buildOptionsDownloads() {
 
 			this.saveToSharepoint = this.dom.el('a')
-				.text('Save to Sharepoint')
+				.text('Save to SharePoint')
 				.attrs({
 					'href': '#',
 				})
@@ -1861,6 +1861,7 @@
 								this.downloadPNG.text('PNG'),
 								this.downloadSVG.text('SVG'),
 								this.downloadURL.text('URL')
+								//this.saveToSharepoint.text('SharePoint')
 							)
 					);
 			} else {
@@ -2372,20 +2373,15 @@
 	});
 
 	const defaultCode = (
-		'title Labyrinth\n' +
+		'title Challenge\n' +
 		'\n' +
-		'Bowie -> Goblin: You remind me of the babe\n' +
-		'Goblin -> Bowie: What babe?\n' +
-		'Bowie -> Goblin: The babe with the power\n' +
-		'Goblin -> Bowie: What power?\n' +
-		'note right of Bowie, Goblin: Most people get muddled here!\n' +
-		'Bowie -> Goblin: "The power of voodoo"\n' +
-		'Goblin -> Bowie: "Who-do?"\n' +
-		'Bowie -> Goblin: You do!\n' +
-		'Goblin -> Bowie: Do what?\n' +
-		'Bowie -> Goblin: Remind me of the babe!\n' +
-		'\n' +
-		'Bowie -> Audience: Sings\n' +
+		'begin A, B, C\n' +
+		'A -> B : Login to Application\n' +
+		'A -> B : Select Product & Payment\n' +
+		'B -> C : Checking product eligible\n' +
+		'B -> C : Submit Request\n' +
+		'C --> B : Request Success\n' +
+		'B --> A : Notification Success\n' +
 		'\n' +
 		'terminators box\n'
 	);
